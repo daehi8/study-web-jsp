@@ -9,7 +9,7 @@ public class TestDTO {
 	private String name;
 	private String age;
 	private Timestamp reg;
-	
+	private String auto;
 	//set 메서드 생성
 	public void setId(String id) {
 		this.id=id;
@@ -29,7 +29,9 @@ public class TestDTO {
 	public void setReg(Timestamp reg) {
 		this.reg=reg;
 	}
-	
+	public void setAuto(String auto) {
+		this.auto=auto;
+	}
 	//get 메서드 생성
 	public String getId() {
 		return id;
@@ -49,7 +51,8 @@ public class TestDTO {
 	public Timestamp getReg() {
 		return reg;
 	}
-	
-	
+	public String getAuto() {
+		return auto;
+	}
 	
 }
