@@ -26,7 +26,7 @@
   <tr>
     <td  width="70"  bgcolor="<%=value_c%>" align="center">¿Ã ∏ß</td>
     <td align="left" width="330">
-       <input type="text" size="10" maxlength="10" name="writer" value="<%=article.getWriter()%>">
+       <input type="text" size="10" maxl ength="10" name="writer" value="<%=article.getWriter()%>">
 	   <input type="hidden" name="num" value="<%=article.getNum()%>"></td>
   </tr>
   <tr>
