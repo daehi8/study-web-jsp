@@ -8,6 +8,15 @@
 </head>
 
 <% 
+
+	String memId = (String)session.getAttribute("memId");
+	if(memId == null){
+%>	<script>
+		alert("로그인후 사용가능합니다.");
+		window.location='/test/member/main.jsp';
+	</script>		
+<%}%>
+<%
   int num=0,ref=1,re_step=0,re_level=0;
   try{  
     if(request.getParameter("num")!=null){
@@ -36,7 +45,8 @@
    <tr>
     <td  width="70"  bgcolor="<%=value_c%>" align="center">이 름</td>
     <td  width="330">
-       <input type="text" size="10" maxlength="10" name="writer"></td>
+    	<%=memId %>
+       <input type="hidden" name="writer" value ="<%=memId%>"></td>
   </tr>
   <tr>
     <td  width="70"  bgcolor="<%=value_c%>" align="center" >제 목</td>

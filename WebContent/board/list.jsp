@@ -31,6 +31,8 @@
     }
 
 	number=count-(currentPage-1)*pageSize;
+	
+	String memId = (String)session.getAttribute("memId");
 %>
 <html>
 <head>
@@ -43,7 +45,11 @@
 <table width="700">
 <tr>
     <td align="right" bgcolor="<%=value_c%>">
-    <a href="writeForm.jsp">글쓰기</a>
+    <% if(memId != null){%>
+    	<a href="writeForm.jsp">글쓰기</a>
+    <%}else{%>
+    	<a href="/test/member/main.jsp">로그인</a>
+    <%}%>
     </td>
 </table>
 

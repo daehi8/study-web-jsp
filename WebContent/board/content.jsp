@@ -56,15 +56,23 @@
   </tr>
   <tr height="30">      
     <td colspan="4" bgcolor="<%=value_c%>" align="right" > 
-	  <input type="button" value="글수정" 
-       onclick="document.location.href='updateForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
-	  <input type="button" value="글삭제" 
-       onclick="document.location.href='deleteForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="button" value="답글쓰기" 
-       onclick="document.location.href='writeForm.jsp?num=<%=num%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
-	   &nbsp;&nbsp;&nbsp;&nbsp;
+    <%
+    	String memId = (String)session.getAttribute("memId");
+    	if(memId != null){
+    		if(memId.equals(article.getWriter())){
+    %>    
+	 <input type="button" value="글수정" 
+     onclick="document.location.href='updateForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
+	 &nbsp;&nbsp;&nbsp;&nbsp;
+	 <input type="button" value="글삭제" 
+     onclick="document.location.href='deleteForm.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>'">
+	 &nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="button" value="답글쓰기" 
+     onclick="document.location.href='writeForm.jsp?num=<%=num%>&ref=<%=ref%>&re_step=<%=re_step%>&re_level=<%=re_level%>'">
+	 &nbsp;&nbsp;&nbsp;&nbsp;
+		<%}%>
+	<%}%>	   
+	   
        <input type="button" value="글목록" 
        onclick="document.location.href='list.jsp?pageNum=<%=pageNum%>'">
     </td>
